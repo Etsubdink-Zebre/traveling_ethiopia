@@ -1,5 +1,6 @@
-from bfs import bfs
-from dfs import dfs
+from uninformed_search.bfs import bfs
+from uninformed_search.dfs import dfs
+
 
 class SearchAgent:
     """

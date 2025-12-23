@@ -1,9 +1,5 @@
-import sys
-import os
-
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from data.graph_unweighted import ethiopia_graph
-from search_agent import SearchAgent
+from uninformed_search.search_agent import SearchAgent
 
 agent = SearchAgent(ethiopia_graph)
 
