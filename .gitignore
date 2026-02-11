@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.pyo
+
+# ROS 2 build artifacts
+ros_navigation/build/
+ros_navigation/install/
+ros_navigation/log/

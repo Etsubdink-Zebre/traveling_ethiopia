@@ -1,36 +1,27 @@
 from uniform_cost_search.ucs import uniform_cost_search
 
-def multi_goal_ucs(graph, start, goals):
-    """
-    Customized Uniform Cost Search for multiple goals.
-    At each step, it visits the nearest unvisited goal using UCS.
-    """
-    current = start
-    remaining_goals = set(goals)
 
+def multi_goal_ucs(graph, start, goals):
+    """Visit every goal city using greedy nearest-unvisited via UCS."""
+    current = start
+    remaining = set(goals)
     full_path = [start]
     total_cost = 0
 
-    while remaining_goals:
-        nearest_goal = None
-        best_path = None
-        best_cost = float('inf')
+    while remaining:
+        nearest, best_path, best_cost = None, None, float('inf')
 
-        # Find the closest goal from current location
-        for goal in remaining_goals:
+        for goal in remaining:
             path, cost = uniform_cost_search(graph, current, goal)
             if path and cost < best_cost:
-                nearest_goal = goal
-                best_path = path
-                best_cost = cost
+                nearest, best_path, best_cost = goal, path, cost
 
-        if nearest_goal is None:
-            break  # no reachable goals left
+        if nearest is None:
+            break
 
-        # Append path (skip first node to avoid duplication)
         full_path.extend(best_path[1:])
         total_cost += best_cost
-        current = nearest_goal
-        remaining_goals.remove(nearest_goal)
+        current = nearest
+        remaining.remove(nearest)
 
     return full_path, total_cost

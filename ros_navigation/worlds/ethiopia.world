@@ -1,0 +1,779 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <world name="ethiopia_world">
+    <scene>
+      <ambient>0.8 0.8 0.8 1</ambient>
+      <background>0.7 0.85 1.0 1</background>
+      <grid>false</grid>
+    </scene>
+
+    <!-- Ground Plane -->
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Lighting -->
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <!-- ============================================================ -->
+    <!-- Cities: All 41 states from Figure 5 (Relaxed Search Problem) -->
+    <!-- Cartesian coordinate system, Addis Ababa at origin           -->
+    <!-- ============================================================ -->
+
+    <!-- Central Region -->
+    <model name="addis_ababa">
+      <static>true</static>
+      <pose>0.0 0.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.5 0.5 0.2</size></box></geometry>
+          <material><diffuse>0.8 0.2 0.2 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="debre_birhan">
+      <static>true</static>
+      <pose>1.5 3.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.2 0.2 0.8 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="ambo">
+      <static>true</static>
+      <pose>-3.0 0.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.8 0.8 0.2 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="adama">
+      <static>true</static>
+      <pose>1.5 -2.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.2 0.8 0.2 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wolkite">
+      <static>true</static>
+      <pose>-2.0 -1.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.7 0.3 0.3 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="buta_jirra">
+      <static>true</static>
+      <pose>-0.5 -2.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.4 0.6 0.4 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="worabe">
+      <static>true</static>
+      <pose>-1.0 -3.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.3 0.7 0.3 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="batu">
+      <static>true</static>
+      <pose>0.5 -3.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.6 0.4 0.2 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Western Region -->
+    <model name="nekemte">
+      <static>true</static>
+      <pose>-5.0 1.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.8 0.8 0.2 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="gimbi">
+      <static>true</static>
+      <pose>-6.5 2.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.4 0.8 0.4 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="dembi_dollo">
+      <static>true</static>
+      <pose>-7.5 1.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.6 0.6 0.4 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="bedelle">
+      <static>true</static>
+      <pose>-5.0 -1.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.5 0.5 0.7 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="gore">
+      <static>true</static>
+      <pose>-6.5 -2.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.4 0.4 0.6 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="gambella">
+      <static>true</static>
+      <pose>-8.5 -2.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.2 0.6 0.8 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="tepi">
+      <static>true</static>
+      <pose>-6.5 -4.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.8 0.2 0.4 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="bonga">
+      <static>true</static>
+      <pose>-5.5 -3.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.3 0.8 0.3 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="mezan_tefari">
+      <static>true</static>
+      <pose>-6.0 -4.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.6 0.2 0.6 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="jimma">
+      <static>true</static>
+      <pose>-4.0 -2.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.2 0.8 0.8 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Southern Region -->
+    <model name="hossana">
+      <static>true</static>
+      <pose>-1.0 -4.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.4 0.4 0.6 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="shashemene">
+      <static>true</static>
+      <pose>0.5 -5.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.5 0.5 0.5 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="hawassa">
+      <static>true</static>
+      <pose>1.0 -5.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.5 0.8 0.5 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="dilla">
+      <static>true</static>
+      <pose>1.0 -7.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.6 0.4 0.6 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="wolaita_sodo">
+      <static>true</static>
+      <pose>-2.0 -5.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.6 0.6 0.2 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="dawro">
+      <static>true</static>
+      <pose>-3.0 -5.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.4 0.4 0.8 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="arba_minch">
+      <static>true</static>
+      <pose>-2.5 -8.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.2 0.8 0.8 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Eastern Region -->
+    <model name="matahara">
+      <static>true</static>
+      <pose>3.0 -1.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.5 0.5 0.5 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="awash">
+      <static>true</static>
+      <pose>4.5 -0.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.6 0.6 0.6 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="chiro">
+      <static>true</static>
+      <pose>5.5 1.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.2 0.8 0.2 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="dire_dawa">
+      <static>true</static>
+      <pose>6.5 2.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.8 0.2 0.8 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="harar">
+      <static>true</static>
+      <pose>7.5 1.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.5 0.1 0.9 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="babile">
+      <static>true</static>
+      <pose>7.5 0.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.1 0.9 0.5 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="jijiga">
+      <static>true</static>
+      <pose>8.5 -0.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.9 0.1 0.3 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="dega_habur">
+      <static>true</static>
+      <pose>7.0 -2.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.3 0.3 0.9 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="kebri_dehar">
+      <static>true</static>
+      <pose>8.5 -4.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.2 0.6 0.8 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="gode">
+      <static>true</static>
+      <pose>8.5 -7.0 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.6 0.2 0.8 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Southeast Region -->
+    <model name="assella">
+      <static>true</static>
+      <pose>2.5 -2.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.6 0.4 0.4 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="assasa">
+      <static>true</static>
+      <pose>3.5 -3.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.4 0.6 0.6 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="dodola">
+      <static>true</static>
+      <pose>3.5 -5.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.5 0.5 0.5 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="bale">
+      <static>true</static>
+      <pose>4.5 -5.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.3 0.5 0.7 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="goba">
+      <static>true</static>
+      <pose>5.5 -3.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.5 0.7 0.3 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <model name="sof_oumer">
+      <static>true</static>
+      <pose>6.5 -4.5 0.1 0 0 0</pose>
+      <link name="link">
+        <visual name="visual">
+          <geometry><box><size>0.4 0.4 0.2</size></box></geometry>
+          <material><diffuse>0.8 0.4 0.2 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- ============================================================ -->
+    <!-- Three-wheel robot with differential drive (Requirement 5.1)  -->
+    <!-- 2 drive wheels + 1 caster wheel                              -->
+    <!-- Sensors: RGB Camera, Proximity Sensor, Gyroscope/IMU         -->
+    <!-- ============================================================ -->
+    <model name="ethio_bot">
+      <pose>0 0 0.08 0 0 0</pose>
+      <static>false</static>
+
+      <!-- ---- Chassis ---- -->
+      <link name="base_link">
+        <pose>0 0 0 0 0 0</pose>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.4 0.28 0.08</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0.8 1</ambient>
+            <diffuse>0 0 0.8 1</diffuse>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.4 0.28 0.08</size>
+            </box>
+          </geometry>
+        </collision>
+        <inertial>
+          <mass>5.0</mass>
+          <inertia>
+            <ixx>0.0408</ixx>
+            <iyy>0.0708</iyy>
+            <izz>0.0983</izz>
+          </inertia>
+        </inertial>
+
+        <!-- RGB Camera sensor (Requirement 5.1) -->
+        <sensor name="rgb_camera" type="camera">
+          <pose>0.2 0 0.05 0 0 0</pose>
+          <always_on>true</always_on>
+          <update_rate>15</update_rate>
+          <camera>
+            <horizontal_fov>1.047</horizontal_fov>
+            <image>
+              <width>320</width>
+              <height>240</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip><near>0.1</near><far>100</far></clip>
+          </camera>
+        </sensor>
+
+        <!-- IMU / Gyroscope sensor (Requirement 5.1) -->
+        <sensor name="imu_sensor" type="imu">
+          <always_on>true</always_on>
+          <update_rate>50</update_rate>
+        </sensor>
+      </link>
+
+      <!-- ---- Left Drive Wheel ---- -->
+      <!-- Positioned behind centre, left side, rotated so cylinder axis = Y -->
+      <link name="left_wheel">
+        <pose>-0.08 0.175 -0.03 -1.5708 0 0</pose>
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.04</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.04</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.2</mu>
+                <mu2>1.2</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <inertial>
+          <mass>0.5</mass>
+          <inertia>
+            <ixx>0.00038</ixx>
+            <iyy>0.00038</iyy>
+            <izz>0.000625</izz>
+          </inertia>
+        </inertial>
+      </link>
+
+      <!-- ---- Right Drive Wheel ---- -->
+      <link name="right_wheel">
+        <pose>-0.08 -0.175 -0.03 -1.5708 0 0</pose>
+        <visual name="visual">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.04</length>
+            </cylinder>
+          </geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>0.05</radius>
+              <length>0.04</length>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1.2</mu>
+                <mu2>1.2</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <inertial>
+          <mass>0.5</mass>
+          <inertia>
+            <ixx>0.00038</ixx>
+            <iyy>0.00038</iyy>
+            <izz>0.000625</izz>
+          </inertia>
+        </inertial>
+      </link>
+
+      <!-- ---- Caster Wheel (third wheel, front) ---- -->
+      <link name="caster_wheel">
+        <pose>0.17 0 -0.055 0 0 0</pose>
+        <visual name="visual">
+          <geometry>
+            <sphere>
+              <radius>0.025</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.15 0.15 0.15 1</ambient>
+            <diffuse>0.15 0.15 0.15 1</diffuse>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <sphere>
+              <radius>0.025</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>0.0</mu>
+                <mu2>0.0</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
+        <inertial>
+          <mass>0.2</mass>
+          <inertia>
+            <ixx>0.00001</ixx>
+            <iyy>0.00001</iyy>
+            <izz>0.00001</izz>
+          </inertia>
+        </inertial>
+      </link>
+
+      <!-- Proximity sensor link (front-mounted, Requirement 5.1) -->
+      <link name="proximity_link">
+        <pose>0.21 0 0 0 0 0</pose>
+        <sensor name="proximity_sensor" type="gpu_lidar">
+          <always_on>true</always_on>
+          <update_rate>10</update_rate>
+          <lidar>
+            <scan>
+              <horizontal>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </horizontal>
+            </scan>
+            <range>
+              <min>0.05</min>
+              <max>3.0</max>
+              <resolution>0.01</resolution>
+            </range>
+          </lidar>
+        </sensor>
+        <inertial>
+          <mass>0.01</mass>
+          <inertia>
+            <ixx>0.000001</ixx>
+            <iyy>0.000001</iyy>
+            <izz>0.000001</izz>
+          </inertia>
+        </inertial>
+      </link>
+
+      <!-- ---- Joints ---- -->
+      <joint name="left_wheel_joint" type="revolute">
+        <parent>base_link</parent>
+        <child>left_wheel</child>
+        <axis>
+          <xyz expressed_in='__model__'>0 1 0</xyz>
+          <limit>
+            <lower>-1.79769e+308</lower>
+            <upper>1.79769e+308</upper>
+          </limit>
+        </axis>
+      </joint>
+
+      <joint name="right_wheel_joint" type="revolute">
+        <parent>base_link</parent>
+        <child>right_wheel</child>
+        <axis>
+          <xyz expressed_in='__model__'>0 1 0</xyz>
+          <limit>
+            <lower>-1.79769e+308</lower>
+            <upper>1.79769e+308</upper>
+          </limit>
+        </axis>
+      </joint>
+
+      <joint name="caster_joint" type="ball">
+        <parent>base_link</parent>
+        <child>caster_wheel</child>
+      </joint>
+
+      <joint name="proximity_joint" type="fixed">
+        <parent>base_link</parent>
+        <child>proximity_link</child>
+      </joint>
+
+      <!-- Differential Drive Plugin for Gazebo Sim -->
+      <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+        <left_joint>left_wheel_joint</left_joint>
+        <right_joint>right_wheel_joint</right_joint>
+        <wheel_separation>0.35</wheel_separation>
+        <wheel_radius>0.05</wheel_radius>
+        <odom_publish_frequency>50</odom_publish_frequency>
+        <topic>cmd_vel</topic>
+        <odom_topic>odom</odom_topic>
+        <odom_frame>odom</odom_frame>
+        <robot_base_frame>base_link</robot_base_frame>
+      </plugin>
+    </model>
+
+  </world>
+</sdf>

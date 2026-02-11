@@ -1,6 +1,6 @@
 from data.graph_weighted import ethiopia_graph
 from astar_search.astar import AStarAgent
-from data.heuristic import ethiopia_heuristic_graph  # updated heuristic
+from data.heuristic import ethiopia_heuristic_graph
 
 start = "Addis Ababa"
 goal = "Moyale"
